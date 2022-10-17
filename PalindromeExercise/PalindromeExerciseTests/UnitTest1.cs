@@ -8,7 +8,7 @@ namespace PalindromeExerciseTests
         [Theory]
         [InlineData("racecar",true)]
         [InlineData("cop",false)]
-       // Wordsmith.isAPalindrome
+       
         public void PalindromeTest1(string word,bool expected)
         {
             var wordSmith = new Wordsmith();
