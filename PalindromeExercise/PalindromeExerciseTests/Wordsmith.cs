@@ -1,70 +1,21 @@
 ﻿using System;
 namespace PalindromeExerciseTests
 {
-    public abstract class Wordsmith
+    public  class Wordsmith
     {
-        public static bool IsPalindrome(string value)
+        public bool IsAPalindrome(string myString)
         {
-            int min = 0;
-            int max = value.Length - 1;
-            while (true)
+            int length = myString.Length;
+            for (int i = 0; i < length / 2; i++)
             {
-                if (min > max)
-                {
-                    return true;
-                }
-                char a = value[min];
-                char b = value[max];
-                if (char.ToLower(a) != char.ToLower(b))
-                {
+                if (myString[i] != myString[length - i - 1])
                     return false;
-                }
-                min++;
-                max--;
             }
+            return true;
         }
 
-        static void Main()
-        {
-            string[] array =
-            {
-            "civic",
-            "deified",
-            "deleveled",
-            "devoved",
-            "dewed",
-            "Hannah",
-            "kayak",
-            "level",
-            "madam",
-            "racecar",
-            "radar",
-            "redder",
-            "refer",
-            "repaper",
-            "reviver",
-            "rotator",
-            "rotor",
-            "sagas",
-            "solos",
-            "sexes",
-            "stats",
-            "tenet",
 
-            "Dot",
-            "Net",
-            "Perls",
-            "Is",
-            "Not",
-            "A",
-            "Palindrome",
-            ""
-        };
 
-            foreach (string value in array)
-            {
-                Console.WriteLine("{0} = {1}", value, IsPalindrome(value));
-            }
-        }
     }
+}
   
